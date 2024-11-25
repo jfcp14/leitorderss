@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leitor RSS</title>
+    <!-- Bootstrap CSS -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+        rel="stylesheet"> 
+        
+    <!-- Arquivo CSS Personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Leitor RSS</h1>
+
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input 
+                        type="url" 
+                        id="rssUrl" 
+                        class="form-control" 
+                        placeholder="Insira o URL do feed RSS (ex: https://exemplo.com/feed.xml)">
+                    <button 
+                        class="btn btn-primary" 
+                        onclick="fetchRSS()">
+                        Carregar Feed
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="text-center d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">A carregar...</span>
+            </div>
+        </div>
+
+        <div id="error" class="alert alert-danger d-none" role="alert">
+            <!-- Mensagem de erro será inserida aqui -->
+        </div>
+
+        <div id="feedContent" class="row justify-content-center">
+            <!-- O conteúdo do feed RSS será inserido aqui -->
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Bundle com Popper.js) -->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-cn7l7gDp0eyNpGqE77r26bDGz2kn8pHb5gMRU6/27EFP8KncGiD3D8RvbKLo9K4" 
+        crossorigin="anonymous">
+    </script>
+    <!-- Arquivo JavaScript Personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
